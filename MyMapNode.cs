@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HashTablesAndBinarySearchTree
 {
-    class MyMapNode<K,V>
+    public class MyMapNode<K,V>
     {
         private readonly int size;
         private readonly  LinkedList<KeyValue<K, V>>[] items;
@@ -48,12 +48,12 @@ namespace HashTablesAndBinarySearchTree
             LinkedList<KeyValue<K, V>> linkedList = GetLinkedList(position);
             foreach (KeyValue<K, V> item in linkedList)
             {
-                if (item.Key.Equals(key))
+               if (item.Key.Equals(key))
                 {
                     return item.Value;
                 }
             }
-            return default(V);
+           return default(V);
         }
 
     }

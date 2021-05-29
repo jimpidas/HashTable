@@ -14,7 +14,9 @@ namespace HashTablesAndBinarySearchTree
             hash.Add("4", "to");
             hash.Add("5", "be");
             string hash2 = hash.Get("2");
-            Console.WriteLine("The value for second index is {0} ", hash2);
+            Console.WriteLine("The value for second index is: {0} ", hash2);
+            string hash1 = hash.Get("1");
+            Console.WriteLine("The value for First index is: {0} ", hash1);
         }
     }
 }

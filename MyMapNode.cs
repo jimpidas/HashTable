@@ -12,7 +12,6 @@ namespace HashTablesAndBinarySearchTree
         {
             this.size = size;
             this.items = new LinkedList<KeyValue<K, V>>[size];
-
         }
         public void Add( K Key ,V value)
         {
@@ -38,7 +37,6 @@ namespace HashTablesAndBinarySearchTree
         }
         public struct KeyValue<k, v>
         {
-
             public k Key { get; set; }
             public v Value { get; set; }
         }
@@ -49,12 +47,11 @@ namespace HashTablesAndBinarySearchTree
             foreach (KeyValue<K, V> item in linkedList)
             {
                if (item.Key.Equals(key))
-                {
+               {
                     return item.Value;
-                }
+               }
             }
            return default(V);
         }
-
     }
 }

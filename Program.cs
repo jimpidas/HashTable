@@ -2,7 +2,7 @@
 
 namespace HashTablesAndBinarySearchTree
 {
-   public class Program
+    class Program
     {
         static void Main(string[] args)
         {
@@ -15,9 +15,12 @@ namespace HashTablesAndBinarySearchTree
                 hash.Add(key, word);
                 key++;
             }
-            for(key=0;key<paragraph.Length;key++)
+            
+            
+            hash.Remove(17) ;
+            for (key = 0; key < paragraph.Length; key++)
             {
-               string value= hash.Get(key);
+                string value = hash.Get(key);
                 Console.WriteLine($"frequency of word '{value}' is {key}");
             }
         }

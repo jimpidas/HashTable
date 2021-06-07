@@ -4,16 +4,16 @@ using System.Text;
 
 namespace HashTablesAndBinarySearchTree
 {
-    public class MyMapNode<K,V>
+    public class MyMapNode<K, V>
     {
         private readonly int size;
-        private readonly  LinkedList<KeyValue<K, V>>[] items;
+        private readonly LinkedList<KeyValue<K, V>>[] items;
         public MyMapNode(int size)
         {
             this.size = size;
             this.items = new LinkedList<KeyValue<K, V>>[size];
         }
-        public void Add( K Key ,V value)
+        public void Add(K Key, V value)
         {
             int position = GetArrayPosition(Key);
             LinkedList<KeyValue<K, V>> linkedlist = GetLinkedList(position);
@@ -46,12 +46,32 @@ namespace HashTablesAndBinarySearchTree
             LinkedList<KeyValue<K, V>> linkedList = GetLinkedList(position);
             foreach (KeyValue<K, V> item in linkedList)
             {
-               if (item.Key.Equals(key))
-               {
+                if (item.Key.Equals(key))
+                {
                     return item.Value;
-               }
+                }
             }
-           return default(V);
+            return default(V);
+        }
+       
+
+        public void Remove(K key)
+        {
+            int position = GetArrayPosition(key);
+            LinkedList<KeyValue<K, V>> linkedList = GetLinkedList(position);
+            bool itemFound = false;
+            KeyValue<K, V> foundItem = default(KeyValue<K, V>);
+            foreach (KeyValue<K, V> item in linkedList)
+            {
+                if (item.Key.Equals(key))
+                {
+                    itemFound = true;
+                    foundItem = item;
+                    
+                }
+            }
+            if (itemFound)
+                linkedList.Remove(foundItem);
         }
     }
 }
